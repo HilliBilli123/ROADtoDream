@@ -1,0 +1,14 @@
+._contein{
+    width: 1280px;
+    margin: 0 auto;
+}
+.btn{
+    border: none;
+    background: none;
+    color: white;
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    width: 500px;
+    cursor: pointer;
+}

@@ -1,0 +1,70 @@
+@import url("styleNULL.css");
+@import url("comon.css");
+.header__link{
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px 10px;
+    border-bottom: 1px #315283 solid;
+    transition: all 0.4s ease-in-out;
+}
+.header__link:hover{
+    border-bottom: 3px white solid;
+}
+.header{
+    z-index: 2;
+    position: sticky;
+    top: 0px;
+    background-color: #87b0d8d1;
+    /* border-radius: 0px 0px 70px 70px ; */
+}
+.header__content{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px 0px;
+}
+.active{
+    border-bottom: 3px solid white;
+}
+.page__content{
+    display: flex;
+    flex-direction: column;
+}
+.page__content__block img{
+    width: 100%;
+    height: 100%;
+}
+.page__content__block{
+    position: relative;
+    height: calc(100vh - 82px);
+}
+.block__content__text{
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.text__title{
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 100px;
+    color: #fff;
+    width: 500px;
+}
+.btn{
+    /* border: none; */
+    background: none;
+    color: white;
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    width: 500px;
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid #fff;
+}
