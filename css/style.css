@@ -7,11 +7,11 @@
     font-size: 18px;
     font-weight: 700;
     padding: 10px 10px;
-    border-bottom: 1px #315283 solid;
+    border-bottom: 3px transparent solid;
     transition: all 0.4s ease-in-out;
 }
 .header__link:hover{
-    border-bottom: 1px white solid;
+    border-bottom: 3px white solid;
 }
 .header{
     z-index: 2;
@@ -30,38 +30,160 @@
 .page__content{
     display: flex;
     flex-direction: row;
-    overflow-x: auto;
-
+    overflow: hidden;
 }
 .page__content__block{
-    display: none;
     min-width: 100vw;
     height: calc(100vh - 85px);
-    transform: translateX(-100%);
     transition: all 1s;
+    overflow: hidden;
 }
-.block__content__text{
-    position: absolute;
-    top: 0;
+.active{
+    border-bottom: 3px solid #fff;
+}
+.table__block{
+    display: flex;
+    justify-content: space-between;
+    /* padding-top: 20px; */
+    border-left: solid 1px #87b0d8d1;
+    border-right: solid 1px #87b0d8d1;
+}
+.table__link__header{
+    width: 100%;
+    text-align: center;
+    background-color: #87b0d8d1;
+    border-right: solid 1px #fff;
+    padding: 10px 0;
+    color: white;
+}
+.table__link__header:last-child{
+    border-right: none;
+}
+.welcome{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 100%;
-}
-.text__title{
-    font-size: 64px;
+    font-size: 32px;
     font-weight: 700;
-    line-height: 100px;
-    color: #fff;
-    width: 500px;
-}
-
-.active{
-    border-bottom: 1px solid #fff;
 }
 .active-block{
-    display: block;
-    transform: translateX(0%);
+    min-width: 100vw;
+    flex: 1 1 auto;
+}
+.table__links{
+    
+}
+.table__link{
+    width: 100%;
+    text-align: center;
+    border-right: solid 1px #87b0d8d1;
+    padding: 10px 0;
+    border-bottom: solid 1px #87b0d8d1;
+}
+.table__link:last-child{
+    border-right: none;
+}
+.ground{
+    padding-top: 20px;
+}
+.model__window{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000004f;
+    justify-content: center;
+    align-items: center;
+}
+.model__window__open{
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.model__window__open:hover{
+    background-color: #87b0d8d1;
+}
+.model__window__content{
+    /* width: 500px; */
+    /* height: 400px; */
+    padding: 20px;
+    background-color: #87afd8;
+}
+.order__contein{
+    height: 100%;
+}
+.order__block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100%; */
+    
+}
+.order__block form{
+    display: flex;
+    flex-direction: column;
+    /* align-items: stretch; */
+    justify-content: space-between;
+    /* height: 200px; */
+    width: 500px;
+    position: relative;
+}
+.lable__text__lang input{
+    font-size: 24px;
+    width: 100%;
+    background-color: #f5f5f5;
+    border: none;
+    border-bottom: 1px solid #fff;
     transition: all 0.5s;
+    padding: 10px 0px 0px 0px;
+    margin-bottom: 20px;
+}
+
+.lable__text__lang input:focus{
+    color: #212529;
+    background-color: #fff;
+    border-color: #87afd8;
+    outline: 0;
+    /* box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25); */
+}
+
+.lable__text__lang{
+    position: relative;
+}
+.lable__text__lang label{
+    position: absolute;
+    top: -5px;
+    left: 0;
+    height: 100%;
+    /* padding: 1rem .75rem; */
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: color .15s ease-in-out, transform .15s ease-in-out;
+}
+.order__block button{
+    font-size: 20px;
+    font-weight: 700;
+    border: solid 1px #fff;
+    padding: 10px 0px;
+    background: none;
+    transition: all 0.5s;
+    /* text-transform: uppercase; */
+    cursor: pointer;
+}
+.order__block button:hover{
+    color: white;
+}
+.order__block select{
+    font-size: 24px;
+    width: 100%;
+    background-color: #f5f5f5;
+    border: none;
+    border-bottom: 1px solid #87afd8;
+    transition: all 0.5s;
+    /* padding: 10px 0px 0px 0px; */
+    margin-bottom: 20px;
+    outline: 0;
 }

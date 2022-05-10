@@ -2,4 +2,14 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    font-family: 'Segoe UI';
+}
+a{
+    text-decoration: none;
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+input{
+    display: inline-block;
 }
