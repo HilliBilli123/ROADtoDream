@@ -15,3 +15,4 @@ closes.forEach(elem =>{
         }
     })
 })
+

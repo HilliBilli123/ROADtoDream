@@ -80,6 +80,9 @@
     border-right: solid 1px #87b0d8d1;
     padding: 10px 0;
     border-bottom: solid 1px #87b0d8d1;
+    word-break: break-all;
+    /* word-spacing: 20px; */
+    
 }
 .table__link:last-child{
     border-right: none;
@@ -137,7 +140,7 @@
     border: none;
     border-bottom: 1px solid #fff;
     transition: all 0.5s;
-    padding: 10px 0px 0px 0px;
+    padding: 5px 0px;
     margin-bottom: 20px;
 }
 
@@ -153,9 +156,9 @@
     position: relative;
 }
 .lable__text__lang label{
-    position: absolute;
-    top: -5px;
-    left: 0;
+    /* position: absolute; */
+    /* top: -10px;
+    left: 0; */
     height: 100%;
     /* padding: 1rem .75rem; */
     pointer-events: none;
@@ -187,3 +190,4 @@
     margin-bottom: 20px;
     outline: 0;
 }
+

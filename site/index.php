@@ -100,6 +100,7 @@ $cargos = mysqli_query($connect, "SELECT * FROM `cargo`");
         </div>
         <!-- <div class="page__content__block" id="stone">6</div> -->
         <!-- <div class="page__content__block" id="coverage">7</div> -->
+
         <div class="page__content__block _contein" id="order">
             <div class="items__center">
                 <div class="block__title">
@@ -116,7 +117,7 @@ $cargos = mysqli_query($connect, "SELECT * FROM `cargo`");
                             <input type="tel" maxlength="12" name="number">
                         </div>
                         <label for="clientName">Выберите город</label>
-                        <select name="cityId" id="">
+                        <select name="cityId" id="city">
                             <?
                             foreach ($citys as $city) {
                             ?>
@@ -125,18 +126,35 @@ $cargos = mysqli_query($connect, "SELECT * FROM `cargo`");
                             }
                             ?>
                         </select>
-                        <label for="clientName">Груз</label>
-                        <select name="cargo" class="cargo" id="">
-                            <?
-                            foreach ($cargos as $cargo) {
-                            ?>
-                                <option data-cargos="<? echo $cargo["price"] ?>" 
-                                value="<? echo $cargo["id"] ?>"><? echo $cargo["name"]," от ",$cargo["price"]," тг за 1 кубометр" ?></option>
-                                <?
-                            }
-                            ?>
-                        </select>
-                        <!-- <input type="text" name="citiId"> -->
+                        <div class="plus__conteint">
+                            <label for="clientName">Груз</label>
+                            <!-- <button class="plus__button">+</button> -->
+                        </div>
+                        <div class="plus__add__block">
+                            <div class="select__block__flex">
+                                <select name="cargo[]" class="cargo" id="cargo">
+                                    <?
+                                    foreach ($cargos as $cargo) {
+                                    ?>
+                                        <option data-cargos="<? echo $cargo["price"] ?>" value="<? echo $cargo["name"] ?>"><? echo $cargo["name"], " от ", $cargo["price"], " тг за 1 кубометр" ?></option>
+                                    <?
+                                    }
+                                    ?>
+                                </select>
+
+                                <div class="input__plus__minus">
+                                    <div class=" input__button minus">-</div>
+                                    <input type="text" id="input__type">
+                                    <div class="input__button plus">+</div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lable__text__lang">
+                            <label for="clientName">Цена</label>
+                            <input type="text" id="price" disabled>
+                            <input type="text" style="display:none;" name="price" id="dubl">
+                        </div>
                         <button type="submit">Оформить заказ</button>
                     </form>
                 </div>
@@ -144,6 +162,9 @@ $cargos = mysqli_query($connect, "SELECT * FROM `cargo`");
         </div>
     </div>
     <script src="js/scroll.js"></script>
+    <script src="js/scipt.js"></script>
+    <!-- <script src="js/map.js"></script> -->
+
 </body>
 
 </html>

@@ -4,6 +4,7 @@ $citys = mysqli_query($connect, "SELECT * FROM `city`");
 $orders = mysqli_query($connect, "SELECT * FROM `orders`");
 $cars = mysqli_query($connect, "SELECT * FROM `cars`");
 $cargos = mysqli_query($connect, "SELECT * FROM `cargo`");
+$drivers = mysqli_query($connect, "SELECT * FROM `driver`");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,15 +74,9 @@ $cargos = mysqli_query($connect, "SELECT * FROM `cargo`");
                             }
                         }
                         ?>
-                        <?
-                        foreach ($cargos as $cargo) {
-                            if ($cargo["id"] == $order["cargoId"]) {
-                        ?>
-                                <div class="table__link"><? echo $cargo["name"] ?></div>
-                        <?
-                            }
-                        }
-                        ?>
+
+                        <div class="table__link"><? echo $order["cargoId"] ?></div>
+
                         <div class="table__link model__window__open">Оформить</div>
                         <div class="model__window">
                             <div class="model__window__content">
@@ -89,11 +84,11 @@ $cargos = mysqli_query($connect, "SELECT * FROM `cargo`");
                                     <form action="../inc/add.php" method="post">
                                         <div class="lable__text__lang">
                                             <label for="clientName">Имя клиента</label>
-                                            <input disabled type="text" value="<?echo $order["client"] ?>" name="clientName">
+                                            <input disabled type="text" value="<? echo $order["client"] ?>" name="clientName">
                                         </div>
                                         <div class="lable__text__lang">
                                             <label for="clientName">Номер клиента</label>
-                                            <input type="text" disabled value="<?echo $order["number"] ?>" name="number">
+                                            <input type="text" disabled value="<? echo $order["number"] ?>" name="number">
                                         </div>
                                         <label for="clientName">Город</label>
                                         <select disabled name="cityId" id="">
@@ -105,7 +100,17 @@ $cargos = mysqli_query($connect, "SELECT * FROM `cargo`");
                                             }
                                             ?>
                                         </select>
-                                        <label for="clientName">Выбрать машину</label>
+                                        <label for="clientName">Выбрать водителя</label>
+                                        <select name="carId" id="">
+                                            <?
+                                            foreach ($drivers as $driver) {
+                                            ?>
+                                                <option value="<? echo $driver["id"] ?>"><? echo $driver["name"] ?></option>
+                                            <?
+                                            }
+                                            ?>
+                                        </select>
+                                        <label for="clientName">Выбрать водителя</label>
                                         <select name="carId" id="">
                                             <?
                                             foreach ($cars as $car) {
@@ -115,16 +120,10 @@ $cargos = mysqli_query($connect, "SELECT * FROM `cargo`");
                                             }
                                             ?>
                                         </select>
-                                        <label for="clientName">Выбрать машину</label>
-                                        <select name="cargo" id="">
-                                            <?
-                                            foreach ($cargos as $cargo) {
-                                            ?>
-                                                <option value="<? echo $cargo["id"] ?>"><? echo $cargo["name"] ?></option>
-                                            <?
-                                            }
-                                            ?>
-                                        </select>
+                                        <div class="lable__text__lang">
+                                            <label for="clientName">Груз</label>
+                                            <input disabled type="text" value="<? echo $order["cargoId"] ?>" name="">
+                                        </div>
                                         <button type="submit">Оформить заказ</button>
                                     </form>
                                 </div>
