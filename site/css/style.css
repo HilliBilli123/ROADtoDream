@@ -268,3 +268,12 @@ span {
 #city{
   margin-bottom: 20px;
 }
+.about{
+  display: flex;
+  align-items: center;
+}
+.about img{
+  width: 600px;
+  height: 400px;
+  padding: 10px;
+}

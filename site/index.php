@@ -55,32 +55,37 @@ $cargos = mysqli_query($connect, "SELECT * FROM `cargo`");
         <div class="page__content__block _contein" id="ground">
             <div class="items__center">
                 <div class="block__title">
-                    Материалы
+                    Типы асфальтобетонной смеси
                 </div>
-                <div class="ground__image__block">
+                <div class="ground__image__block type">
                     <div class="ground__image__link">
-                        <img src="response/image/material-1.jpg" alt="">
-                        <div class="image__link__title">Песок</div>
-                    </div>
-                    <div class="ground__image__link">
-                        <img src="response/image/material-2.jpg" alt="">
-                        <div class="image__link__title">Щебень</div>
-                    </div>
-                    <div class="ground__image__link">
-                        <img src="response/image/material-4.jpg" alt="">
-                        <div class="image__link__title">Бетоная смесь</div>
+                        <img src="response/image/material-6.jpg" alt="">
+                        <div class="image__link__title">Горячие</div>
                     </div>
                     <div class="ground__image__link">
                         <img src="response/image/material-3.jpg" alt="">
-                        <div class="image__link__title">Грунт</div>
+                        <div class="image__link__title">Холодные </div>
                     </div>
                     <div class="ground__image__link">
-                        <img src="response/image/material-5.jpg" alt="">
-                        <div class="image__link__title">Керамзит</div>
+                        <img src="response/image/material-4.jpg" alt="">
+                        <div class="image__link__title">Литой </div>
+                    </div>
+                </div>
+                <div class="block__title">
+                    Материал заполнитель
+                </div>
+                <div class="ground__image__block ">
+                    <div class="ground__image__link">
+                        <img src="response/image/material-2.jpg" alt="">
+                        <div class="image__link__title">Щебёночные</div>
                     </div>
                     <div class="ground__image__link">
-                        <img src="response/image/material-6.jpg" alt="">
-                        <div class="image__link__title">Геотекстиль</div>
+                        <img src="response/image/gravii.jpg" alt="">
+                        <div class="image__link__title">Гравийные</div>
+                    </div>
+                    <div class="ground__image__link">
+                        <img src="response/image/material-1.jpg" alt="">
+                        <div class="image__link__title">Песчаные</div>
                     </div>
                 </div>
             </div>
@@ -92,9 +97,12 @@ $cargos = mysqli_query($connect, "SELECT * FROM `cargo`");
                 <div class="block__title">
                     О нас
                 </div>
-                <div class="geogrid__image__link">
-                    <p>Каждому автомобилисту, велосипедисту либо простому пешеходу приятнее ехать или идти по ровной, гладкой дороге. Любые повреждения дорожного покрытия влияют на скорость вождения, траекторию, а также негативно сказываются на износе деталей машины либо другого транспорта.</p>
-                    <p>Укладывая определенное покрытие, необходимо предварительно учесть нагрузку на него, чтобы предотвратить его преждевременное разрушение.</p>
+                <div class="about">
+                    <div class="geogrid__image__link">
+                        <p>Каждому автомобилисту, велосипедисту либо простому пешеходу приятнее ехать или идти по ровной, гладкой дороге. Любые повреждения дорожного покрытия влияют на скорость вождения, траекторию, а также негативно сказываются на износе деталей машины либо другого транспорта.</p>
+                        <p>Укладывая определенное покрытие, необходимо предварительно учесть нагрузку на него, чтобы предотвратить его преждевременное разрушение.</p>
+                    </div>
+                    <div class="geagrid__image"><img src="response\image\background.jpg" alt=""></div>
                 </div>
             </div>
         </div>
@@ -126,35 +134,6 @@ $cargos = mysqli_query($connect, "SELECT * FROM `cargo`");
                             }
                             ?>
                         </select>
-                        <div class="plus__conteint">
-                            <label for="clientName">Груз</label>
-                            <!-- <button class="plus__button">+</button> -->
-                        </div>
-                        <div class="plus__add__block">
-                            <div class="select__block__flex">
-                                <select name="cargo[]" class="cargo" id="cargo">
-                                    <?
-                                    foreach ($cargos as $cargo) {
-                                    ?>
-                                        <option data-cargos="<? echo $cargo["price"] ?>" value="<? echo $cargo["name"] ?>"><? echo $cargo["name"], " от ", $cargo["price"], " тг за 1 кубометр" ?></option>
-                                    <?
-                                    }
-                                    ?>
-                                </select>
-
-                                <div class="input__plus__minus">
-                                    <div class=" input__button minus">-</div>
-                                    <input type="text" id="input__type">
-                                    <div class="input__button plus">+</div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lable__text__lang">
-                            <label for="clientName">Цена</label>
-                            <input type="text" id="price" disabled>
-                            <input type="text" style="display:none;" name="price" id="dubl">
-                        </div>
                         <button type="submit">Оформить заказ</button>
                     </form>
                 </div>
